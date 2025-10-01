@@ -41,7 +41,7 @@ include(FetchContent)
 FetchContent_Declare(
     SyntaxTextCtrl
     GIT_REPOSITORY https://github.com/simonhj/syntax-text-ctrl.git
-    GIT_TAG main
+    GIT_TAG master
 )
 
 # Make it available
