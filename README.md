@@ -51,7 +51,7 @@ FetchContent_MakeAvailable(SyntaxTextCtrl)
 add_executable(my_app main.cpp)
 
 # Link with SyntaxTextCtrl
-target_link_libraries(my_app SyntaxTextCtrl::SyntaxTextCtrl)
+target_link_libraries(my_app SyntaxTextCtrl)
 ```
 
 ## Basic Usage
