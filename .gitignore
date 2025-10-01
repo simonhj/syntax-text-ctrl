@@ -1,0 +1,103 @@
+# Build artifacts
+*.o
+*.obj
+*.exe
+*.out
+*.app
+*.dSYM/
+*.so
+*.dll
+*.dylib
+*.a
+*.lib
+
+# Executables
+syntax_demo
+demo/syntax_demo
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Build directories
+build/
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile.cmake
+*.cmake
+!CMakeLists.txt
+
+# Autotools
+.deps/
+.dirstamp
+.libs/
+*.la
+*.lo
+*.log
+Makefile.in
+aclocal.m4
+autom4te.cache/
+config.h
+config.h.in
+config.log
+config.status
+configure
+install-sh
+missing
+stamp-h1
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# wxWidgets specific
+*.rc
+*.res
+
+# Documentation build
+docs/_build/
+docs/build/
+
+# Package managers
+conan.lock
+vcpkg_installed/
+
+# Profiling and debugging
+*.prof
+*.gprof
+*.gcov
+*.gcda
+*.gcno
+gmon.out
+callgrind.out.*
+massif.out.*
+
+# Core dumps
+core
+core.*
