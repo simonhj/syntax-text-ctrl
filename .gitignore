@@ -40,6 +40,10 @@ cmake_install.cmake
 Makefile.cmake
 *.cmake
 !CMakeLists.txt
+CMakeScripts/
+Testing/
+CTestTestfile.cmake
+_deps/
 
 # Autotools
 .deps/
