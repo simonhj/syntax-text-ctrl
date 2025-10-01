@@ -165,7 +165,7 @@ void MyFrame::SetupSyntaxHighlighting(SyntaxTextCtrl* ctrl) {
     // Keywords: let, if, then, else, print, return, function
     ctrl->AddSyntaxRule(
         "\\b(let|if|then|else|print|return|function)\\b",
-        [](const wxString& text) {
+        [](const wxString& WXUNUSED(text)) {
             return wxColour(0, 0, 255); // Blue
         }
     );
@@ -173,7 +173,7 @@ void MyFrame::SetupSyntaxHighlighting(SyntaxTextCtrl* ctrl) {
     // Numbers (integers and floats)
     ctrl->AddSyntaxRule(
         "\\b\\d+(\\.\\d+)?\\b",
-        [](const wxString& text) {
+        [](const wxString& WXUNUSED(text)) {
             return wxColour(0, 128, 0); // Green
         }
     );
@@ -181,7 +181,7 @@ void MyFrame::SetupSyntaxHighlighting(SyntaxTextCtrl* ctrl) {
     // Operators
     ctrl->AddSyntaxRule(
         "[+\\-*/=<>!]+",
-        [](const wxString& text) {
+        [](const wxString& WXUNUSED(text)) {
             return wxColour(255, 0, 0); // Red
         }
     );
@@ -189,7 +189,7 @@ void MyFrame::SetupSyntaxHighlighting(SyntaxTextCtrl* ctrl) {
     // Strings (text in quotes)
     ctrl->AddSyntaxRule(
         "\"[^\"]*\"",
-        [](const wxString& text) {
+        [](const wxString& WXUNUSED(text)) {
             return wxColour(128, 0, 128); // Purple
         }
     );
@@ -197,7 +197,7 @@ void MyFrame::SetupSyntaxHighlighting(SyntaxTextCtrl* ctrl) {
     // Comments (// to end of line)
     ctrl->AddSyntaxRule(
         "//.*",
-        [](const wxString& text) {
+        [](const wxString& WXUNUSED(text)) {
             return wxColour(128, 128, 128); // Gray
         }
     );
@@ -235,7 +235,7 @@ void MyFrame::SetupCompletions(SyntaxTextCtrl* ctrl) {
     });
 }
 
-void MyFrame::OnIncreaseFontSize(wxCommandEvent& event) {
+void MyFrame::OnIncreaseFontSize(wxCommandEvent& WXUNUSED(event)) {
     int currentSize = m_textCtrl1->GetFontSize();
     int newSize = currentSize + 2;
     if (newSize <= 24) { // Max size limit
@@ -245,7 +245,7 @@ void MyFrame::OnIncreaseFontSize(wxCommandEvent& event) {
     }
 }
 
-void MyFrame::OnDecreaseFontSize(wxCommandEvent& event) {
+void MyFrame::OnDecreaseFontSize(wxCommandEvent& WXUNUSED(event)) {
     int currentSize = m_textCtrl1->GetFontSize();
     int newSize = currentSize - 2;
     if (newSize >= 6) { // Min size limit
@@ -255,13 +255,13 @@ void MyFrame::OnDecreaseFontSize(wxCommandEvent& event) {
     }
 }
 
-void MyFrame::OnChangeToMonospace(wxCommandEvent& event) {
+void MyFrame::OnChangeToMonospace(wxCommandEvent& WXUNUSED(event)) {
     m_textCtrl1->SetFontFamily(wxFONTFAMILY_TELETYPE);
     m_textCtrl2->SetFontFamily(wxFONTFAMILY_TELETYPE);
     m_textCtrl3->SetFontFamily(wxFONTFAMILY_TELETYPE);
 }
 
-void MyFrame::OnChangeToSansSerif(wxCommandEvent& event) {
+void MyFrame::OnChangeToSansSerif(wxCommandEvent& WXUNUSED(event)) {
     m_textCtrl1->SetFontFamily(wxFONTFAMILY_SWISS);
     m_textCtrl2->SetFontFamily(wxFONTFAMILY_SWISS);
     m_textCtrl3->SetFontFamily(wxFONTFAMILY_SWISS);

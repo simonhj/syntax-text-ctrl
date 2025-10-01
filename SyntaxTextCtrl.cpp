@@ -92,10 +92,10 @@ bool CompletionPopup::SelectPrevious() {
     return false;
 }
 
-void CompletionPopup::OnListBoxClick(wxCommandEvent& event) {
+void CompletionPopup::OnListBoxClick(wxCommandEvent& WXUNUSED(event)) {
 }
 
-void CompletionPopup::OnListBoxDClick(wxCommandEvent& event) {
+void CompletionPopup::OnListBoxDClick(wxCommandEvent& WXUNUSED(event)) {
     AcceptAndDismiss();
 }
 
@@ -137,7 +137,7 @@ SyntaxTextCtrl::SyntaxTextCtrl(wxWindow* parent, wxWindowID id,
                                const wxString& value,
                                const wxPoint& pos,
                                const wxSize& size,
-                               long style)
+                               long WXUNUSED(style))
     : wxControl(parent, id, pos, size, wxBORDER_SUNKEN | wxWANTS_CHARS),
       m_text(value),
       m_cursorPos(value.length()),
@@ -279,7 +279,7 @@ void SyntaxTextCtrl::Redo() {
     Refresh();
 }
 
-void SyntaxTextCtrl::OnPaint(wxPaintEvent& event) {
+void SyntaxTextCtrl::OnPaint(wxPaintEvent& WXUNUSED(event)) {
     wxAutoBufferedPaintDC dc(this);
     
     dc.SetBackground(wxBrush(m_backgroundColor));
@@ -511,17 +511,17 @@ void SyntaxTextCtrl::OnMouseMove(wxMouseEvent& event) {
     }
 }
 
-void SyntaxTextCtrl::OnMouseUp(wxMouseEvent& event) {
+void SyntaxTextCtrl::OnMouseUp(wxMouseEvent& WXUNUSED(event)) {
     m_dragging = false;
 }
 
-void SyntaxTextCtrl::OnSetFocus(wxFocusEvent& event) {
+void SyntaxTextCtrl::OnSetFocus(wxFocusEvent& WXUNUSED(event)) {
     m_cursorVisible = true;
     m_cursorTimer->Start(500);
     Refresh();
 }
 
-void SyntaxTextCtrl::OnKillFocus(wxFocusEvent& event) {
+void SyntaxTextCtrl::OnKillFocus(wxFocusEvent& WXUNUSED(event)) {
     m_cursorTimer->Stop();
     HideCompletions();
     Refresh();
@@ -532,7 +532,7 @@ void SyntaxTextCtrl::OnSize(wxSizeEvent& event) {
     event.Skip();
 }
 
-void SyntaxTextCtrl::OnCursorTimer(wxTimerEvent& event) {
+void SyntaxTextCtrl::OnCursorTimer(wxTimerEvent& WXUNUSED(event)) {
     m_cursorVisible = !m_cursorVisible;
     Refresh();
 }
