@@ -380,17 +380,25 @@ void SyntaxTextCtrl::OnKeyDown(wxKeyEvent& event) {
     bool shiftDown = event.ShiftDown();
     bool accelDown = cmdDown || ctrlDown;
     
-    if (m_showingCompletions && m_completionPopup) {
-        if (keyCode == WXK_UP) {
+    if (keyCode == WXK_UP) {
+        if (m_showingCompletions && m_completionPopup) {
             m_completionPopup->SelectPrevious();
-            return;
-        } else if (keyCode == WXK_DOWN) {
-            m_completionPopup->SelectNext();
-            return;
-        } else if (keyCode == WXK_ESCAPE) {
-            HideCompletions();
-            return;
         }
+        // Always consume up arrow key to prevent it from being processed as text input
+        return;
+    }
+    
+    if (keyCode == WXK_DOWN) {
+        if (m_showingCompletions && m_completionPopup) {
+            m_completionPopup->SelectNext();
+        }
+        // Always consume down arrow key to prevent it from being processed as text input
+        return;
+    }
+    
+    if (m_showingCompletions && m_completionPopup && keyCode == WXK_ESCAPE) {
+        HideCompletions();
+        return;
     }
     
     if (accelDown && keyCode == 'Z' && !shiftDown) {

@@ -44,6 +44,7 @@ CMakeScripts/
 Testing/
 CTestTestfile.cmake
 _deps/
+Makefile
 
 # Autotools
 .deps/
