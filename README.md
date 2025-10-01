@@ -40,8 +40,8 @@ include(FetchContent)
 # Fetch SyntaxTextCtrl
 FetchContent_Declare(
     SyntaxTextCtrl
-    GIT_REPOSITORY https://github.com/yourusername/smart_edit.git
-    GIT_TAG main  # or a specific tag like v1.0.0
+    GIT_REPOSITORY https://github.com/simonhj/syntax-text-ctrl.git
+    GIT_TAG main
 )
 
 # Make it available
