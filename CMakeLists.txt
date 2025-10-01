@@ -88,7 +88,7 @@ install(EXPORT SyntaxTextCtrlTargets
 enable_testing()
 
 # Add demo as subdirectory (optional)
-option(BUILD_DEMO "Build the demo application" ON)
+option(BUILD_DEMO "Build the demo application" OFF)
 if(BUILD_DEMO)
     add_subdirectory(demo)
 endif()
