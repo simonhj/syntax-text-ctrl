@@ -1,8 +1,8 @@
 # SyntaxTextCtrl
 
-A custom wxWidgets single text control with syntax highlighting and auto-completion capabilities.
+A custom wxWidgets single line text control with syntax highlighting and auto-completion capabilities.
 
-wxWidget does not support syntax highlighting and completion in single text
+wxWidget does not support syntax highlighting and completion in single line text
 control, hence the reason for this to exsist.
 
 ## Features
