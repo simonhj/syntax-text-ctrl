@@ -1,14 +1,19 @@
 # SyntaxTextCtrl
 
-A custom wxWidgets text control with syntax highlighting and auto-completion capabilities.
+A custom wxWidgets single text control with syntax highlighting and auto-completion capabilities.
+
+wxWidget does not support syntax highlighting and completion in single text
+control, hence the reason for this to exsist.
 
 ## Features
 
 - **Syntax Highlighting**: Customizable regex-based syntax highlighting
-- **Auto-completion**: Intelligent code completion with customizable suggestions
+- **Auto-completion**: Code completion based on a callback
 - **Standard Text Editing**: Full support for undo/redo, copy/paste, selection, etc.
-- **Font Control**: Dynamic font size and family changes
-- **wxWidgets Integration**: Built on top of wxWidgets for cross-platform compatibility
+
+Note that this component is written using wxWidgets only, it is not backed by
+any native component and hence integrates poorly with any native features such
+as spell check and accessibility
 
 ## Building
 
@@ -24,7 +29,6 @@ make
 
 ## Using with FetchContent
 
-To use this library in your own CMake project:
 
 ```cmake
 cmake_minimum_required(VERSION 3.16)
@@ -76,28 +80,6 @@ textCtrl->SetCompletionFunction([](const wxString& textToCursor) -> std::vector<
     return {"let", "if", "print", "return", "function"};
 });
 ```
-
-## Dependencies
-
-- wxWidgets 3.2 or later
-- C++11 compatible compiler
-- CMake 3.16 or later (for CMake builds)
-
-## Installation
-
-### Ubuntu/Debian
-```bash
-sudo apt-get install libwxgtk3.2-dev
-```
-
-### macOS
-```bash
-brew install wxwidgets
-```
-
-### Windows
-Download wxWidgets from [wxwidgets.org](https://www.wxwidgets.org/downloads/)
-
 ## License
 
-[Add your license here]
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

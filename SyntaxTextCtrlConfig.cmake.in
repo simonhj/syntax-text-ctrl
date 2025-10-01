@@ -1,3 +1,7 @@
+# MIT License
+# Copyright (c) 2024 SyntaxTextCtrl Contributors
+# See LICENSE file for full license text
+
 @PACKAGE_INIT@
 
 # Find wxWidgets

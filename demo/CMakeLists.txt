@@ -1,3 +1,7 @@
+# MIT License
+# Copyright (c) 2024 SyntaxTextCtrl Contributors
+# See LICENSE file for full license text
+
 cmake_minimum_required(VERSION 3.16)
 project(SyntaxTextCtrlDemo LANGUAGES CXX)
 
