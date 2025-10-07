@@ -334,13 +334,6 @@ void SyntaxTextCtrl::OnPaint(wxPaintEvent& WXUNUSED(event)) {
 void SyntaxTextCtrl::OnChar(wxKeyEvent& event) {
     int keyCode = event.GetKeyCode();
 
-    if (keyCode == WXK_RETURN || keyCode == WXK_NUMPAD_ENTER) {
-        if (m_showingCompletions && m_completionPopup) {
-            AcceptCompletion();
-        }
-        return;
-    }
-
     if (keyCode == WXK_TAB) {
         if (m_showingCompletions && m_completionPopup) {
             AcceptCompletion();
@@ -393,6 +386,15 @@ void SyntaxTextCtrl::OnKeyDown(wxKeyEvent& event) {
             m_completionPopup->SelectNext();
         }
         // Always consume down arrow key to prevent it from being processed as text input
+        return;
+    }
+    
+    if (keyCode == WXK_RETURN || keyCode == WXK_NUMPAD_ENTER) {
+        if (m_showingCompletions && m_completionPopup) {
+            AcceptCompletion();
+            return;
+        }
+        event.Skip();
         return;
     }
     
